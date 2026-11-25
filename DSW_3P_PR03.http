@@ -1,0 +1,6 @@
+@DSW_3P_PR03_HostAddress = http://localhost:5048
+
+GET {{DSW_3P_PR03_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
