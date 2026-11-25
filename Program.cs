@@ -1,5 +1,7 @@
 using DSW_3P_PR03.Services;
 using DSW_3P_PR03.Repositories;
+using Microsoft.EntityFrameworkCore;
+using DSW_3P_PR03.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +11,16 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 // Agregar dependencias
-builder.Services.AddScoped<IPersonajeRepository,PersonajeJsonRepository>();
+builder.Services.AddScoped<IPersonajeRepository,PersonajeSQLRepository>();
 builder.Services.AddScoped<IPersonajeService,PersonajeService>();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString(
+            "SqlServerConnection"
+        )
+    )
+);
 
 var app = builder.Build();
 
