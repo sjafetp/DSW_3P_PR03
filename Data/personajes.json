@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "Nombre": "Kratos",
+    "Videojuego": "God of War",
+    "Clase": "Guerrero",
+    "Nivel": 85,
+    "Poder": 950,
+    "Disponible": true,
+    "ImagenUrl": "https://ejemplo.com/kratos.jpg"
+  }
+]
